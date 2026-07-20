@@ -1,0 +1,2 @@
+# FAISS index files (per-region shards) persist here.
+# On Render, mount a persistent volume — local disk is ephemeral across deploys.

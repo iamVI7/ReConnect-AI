@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Env files
+.env
+.env.local
+
+# Build output
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# FAISS index data (regenerated, not committed)
+ai-service/app/index/shards/*.index
+ai-service/app/index/shards/*.pkl
+
+
+/frontend/node_modules/
+/frontend/build/
+/fronend/.env
+
+/backend/node_modules/
+/backend/build/
+/backend/.env
+
+/ai-service/app/index/shards/*.index
+/ai-service/app/index/shards/*.pkl
+/ai-service/.env

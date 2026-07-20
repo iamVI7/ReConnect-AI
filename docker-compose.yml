@@ -1,0 +1,50 @@
+# Local development orchestration only.
+# Production deploys to Vercel (frontend), Render (backend + ai-service), MongoDB Atlas, Cloudinary.
+version: '3.9'
+
+services:
+  mongo:
+    image: mongo:7
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - '6379:6379'
+
+  backend:
+    build: ./backend
+    ports:
+      - '5000:5000'
+    env_file: ./backend/.env
+    depends_on:
+      - mongo
+      - redis
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+
+  ai-service:
+    build: ./ai-service
+    ports:
+      - '8000:8000'
+    env_file: ./ai-service/.env
+    volumes:
+      - ./ai-service:/app
+
+  frontend:
+    build: ./frontend
+    ports:
+      - '5173:5173'
+    env_file: ./frontend/.env
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
+volumes:
+  mongo-data:
