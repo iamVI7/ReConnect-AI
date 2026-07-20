@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ReConnect AI
 
 **Connecting Missing Lives with Their Families.**
@@ -148,3 +149,6 @@ Per the approved plan, implementation proceeds in this sequence:
 ## License
 
 Proprietary — all rights reserved (update if this changes).
+=======
+# ReConnect-AI
+>>>>>>> b6bc377b38a9d169e8913db470be267f01ac3410
