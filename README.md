@@ -136,17 +136,6 @@ Per the approved plan, implementation proceeds in this sequence:
 13. Deployment
 14. Documentation
 
-## Security notes
-
-- The AI service is **never** publicly exposed — only Node.js can call it, using a
-  short-lived signed service token.
-- Browsers **never** talk to Cloudinary directly — all uploads proxy through Node so
-  they can be validated first.
-- Raw biometric data (face images/vectors) is never stored in MongoDB — only
-  Cloudinary URLs and FAISS vector *references*.
-
 ## License
 
 Proprietary — all rights reserved (update if this changes).
-=======
-# ReConnect-AI
